@@ -36,8 +36,12 @@ function runner(p5) {
       if (char.y < SIZE || HEIGHT < char.y) {
         char.vy = -char.vy;
       }
+
       char.x += char.vx;
       char.y += char.vy;
+
+      char.vx *= 0;
+      char.vy *= 0;
 
       p5.colorMode(p5.HSB, 100);
       p5.fill(char.color, 20, 100);
@@ -68,6 +72,6 @@ function runner(p5) {
   };
 }
 
-export default function() {
+export default function () {
   new p5(runner);
 }
